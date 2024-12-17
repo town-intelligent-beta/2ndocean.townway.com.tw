@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // FIXME: 檢查是否所有元素都存在
     if (!newPasswordInput || !confirmPasswordInput || !submitButton || !passwordError || !confirmPasswordError) {
       console.error('Some elements are missing from the DOM. Please check the IDs.');
-      // return; // 如果某些元素不存在，停止執行
+      return; // 如果某些元素不存在，停止執行
     }
 
     // 密碼輸入檢查

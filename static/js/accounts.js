@@ -66,7 +66,7 @@ function resetPassword(email, password) {
     form.append("password", password);
 
     $.ajax({
-        url: "https://beta-tplanet-backend.4impact.cc/accounts/reset_password",
+        url: HOST_URL_TPLANET_DAEMON + "/accounts/reset_password",
         method: "POST",
         timeout: 0,
         processData: false,
@@ -83,44 +83,44 @@ function resetPassword(email, password) {
             console.error(error);
         }
     });
-}
 
-// 當 DOM 載入完成後初始化密碼重設功能
-document.addEventListener('DOMContentLoaded', function() {
-    const newPasswordInput = document.getElementById('new_password');
-    const confirmPasswordInput = document.getElementById('confirm_password');
-    const submitButton = document.getElementById('submit-password');
-    const passwordError = document.getElementById('password-error');
-    const confirmPasswordError = document.getElementById('confirm-password-error');
+    // 當 DOM 載入完成後初始化密碼重設功能
+    document.addEventListener('DOMContentLoaded', function() {
+        const newPasswordInput = document.getElementById('new_password');
+        const confirmPasswordInput = document.getElementById('confirm_password');
+        const submitButton = document.getElementById('submit-password');
+        const passwordError = document.getElementById('password-error');
+        const confirmPasswordError = document.getElementById('confirm-password-error');
 
-    // FIXME: 檢查是否所有元素都存在
-    if (!newPasswordInput || !confirmPasswordInput || !submitButton || !passwordError || !confirmPasswordError) {
-      console.error('Some elements are missing from the DOM. Please check the IDs.');
-      return; // 如果某些元素不存在，停止執行
-    }
-
-    // 密碼輸入檢查
-    function checkPasswords() {
-        const password = newPasswordInput.value;
-        const confirmPassword = confirmPasswordInput.value;
-
-        const errors = validatePassword(password, confirmPassword);
-
-        passwordError.textContent = errors.password;
-        confirmPasswordError.textContent = errors.confirmPassword;
-
-        return !errors.password && !errors.confirmPassword;
-    }
-
-    // 添加輸入事件監聽
-    newPasswordInput.addEventListener('input', checkPasswords);
-    confirmPasswordInput.addEventListener('input', checkPasswords);
-
-    // 提交按鈕點擊事件
-    submitButton.addEventListener('click', function() {
-        if (checkPasswords()) {
-            const email = document.getElementById('account_email').value;
-            resetPassword(email, newPasswordInput.value);
+        // FIXME: 檢查是否所有元素都存在
+        if (!newPasswordInput || !confirmPasswordInput || !submitButton || !passwordError || !confirmPasswordError) {
+          console.error('Some elements are missing from the DOM. Please check the IDs.');
+          return; // 如果某些元素不存在，停止執行
         }
+
+        // 密碼輸入檢查
+        function checkPasswords() {
+            const password = newPasswordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            const errors = validatePassword(password, confirmPassword);
+
+            passwordError.textContent = errors.password;
+            confirmPasswordError.textContent = errors.confirmPassword;
+
+            return !errors.password && !errors.confirmPassword;
+        }
+
+        // 添加輸入事件監聽
+        newPasswordInput.addEventListener('input', checkPasswords);
+        confirmPasswordInput.addEventListener('input', checkPasswords);
+
+        // 提交按鈕點擊事件
+        submitButton.addEventListener('click', function() {
+            if (checkPasswords()) {
+                const email = document.getElementById('account_email').value;
+                resetPassword(email, newPasswordInput.value);
+            }
+        });
     });
-});
+}

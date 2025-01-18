@@ -2,8 +2,6 @@
 HOST_URL_EID_DAEMON = "https://beta-eid-backend.4impact.cc";
 HOST_URL_TPLANET_DAEMON = "https://beta-tplanet-backend.4impact.cc";
 HOST_URL_LLMTWINS = "https://phidata.4impact.cc"
-// "https://phidata.4impact.cc"
-// "https://beta-llmtwins.4impact.cc"
 
 // EID
 HOST_URL_EID = "https://eid.townway.com.tw";

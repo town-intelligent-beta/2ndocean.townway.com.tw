@@ -111,6 +111,9 @@ export async function mockup_new() {
   formData.append("email",  getLocalStorage("email"));
 
   prepare_mockup_upload().then(async function () {
+    // show alert message whith form data
+    alert("確認是否上傳資料: " + JSON.stringify(formData));
+
     var resultJSON =  mockup_upload(formData);
     return resultJSON;
   }).then(function (resultJSON) {

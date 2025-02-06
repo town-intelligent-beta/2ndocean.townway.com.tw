@@ -22,3 +22,5 @@ WEIGHTS = ["SDGs", "CommunityDevelopment", "FiveWaysofLife"]
 // FEATURES
 LLM = true
 SROI = true
+
+VERSION = "1.0.1"

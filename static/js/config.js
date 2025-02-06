@@ -2,13 +2,14 @@
 HOST_URL_EID_DAEMON = "https://rc-eid-backend.4impact.cc";
 HOST_URL_TPLANET_DAEMON = "https://rc-tplanet-backend.4impact.cc";
 
+// LLMTwins
 HOST_URL_LLMTWINS = "https://phidata.4impact.cc"
 
 // EID
 HOST_URL_EID = "https://eid.townway.com.tw";
 
 // Site hoster
-SITE_HOSTERS = ["forus999@gmail.com", "secondhome2023.1@gmail.com", "mickeypeng@tpwl.org", "400@gmail.com"]
+SITE_HOSTERS = ["forus999@gmail.com", "secondhome2023.1@gmail.com", "mickeypeng@tpwl.org"]
 
 // Site information
 SITE_TYPE = 0 // 0 or 1(公板)

@@ -12,7 +12,7 @@ HOST_URL_EID = "https://eid.townway.com.tw";
 SITE_HOSTERS = ["jinliao0601@gmail.com"]
 
 // Site information
-SITE_TYPE = 1 // 0 or 1(公板)
+SITE_TYPE = 0 // 0 or 1(公板)
 SITE_NAME = "Second Ocean"
 COPYRIGHT = "Second Ocean"
 
